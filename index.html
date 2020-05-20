@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> 
+    <style>
+        body{
+            padding: 30px;
+        }
+        .btn{
+            position: absolute;
+            left: 30%;
+            top:30px;
+            
+        }
+    </style>
+</head>
+<body>
+    <button type="button" class="btn btn-danger">Danger</button>
+    <button type="button" class="btn btn-warning">Warning</button>
+    <button type="button" class="btn btn-success">Success</button>
+    <button type="button" class="btn btn-primary">Normal</button>
+    <script>
+        const button=document.querySelectorAll('.btn');
+        function moveButton(){
+            let top=Math.random()*(window.innerHeight-this.clientHeight);
+            let left=Math.random()*(window.innerWidth-this.clientWidth);
+            console.log(top,left);
+            this.style.top=top+'px';
+            this.style.left=left+'px';
+        }
+
+        button.forEach(buttons=>buttons.addEventListener('mouseenter',moveButton));
+    </script>
+</body>
+</html>
